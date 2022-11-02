@@ -182,22 +182,22 @@ data = {
 }
 
 # 倒计时添加到数据
-for index, aim_date in enumerate(split_dates(birthday_date)):
+for index, aim_date in enumerate(split_dates(birthday)):
   key_name = "birthday_left"
   if index != 0:
     key_name = key_name + "_%d" % index
   data[key_name] = {
-    "value": get_counter_left(aim_date),
+    "value": get_counter_left(birthday),
     "color": get_random_color()
   }
 
 # 各种正计时
 for index, aim_date in enumerate(split_dates(start_date)):
-  key_name = "having_day"
+  key_name = "love_day"
   if index != 0:
     key_name = key_name + "_%d" % index
   data[key_name] = {
-    "value": get_memorial_days_count(aim_date),
+    "value": get_memorial_days_count(start_date),
     "color": get_random_color()
   }
 
