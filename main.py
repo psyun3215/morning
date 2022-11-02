@@ -55,23 +55,23 @@ def get_week_day():
   return week_day
 
 # 各种正数日
-def get_memorial_days_count(aim_date):
-  if aim_date is None:
+def get_memorial_days_count(start_date):
+  if start_date is None:
     print('没有设置 开始日')
     return 0
-  delta = today - datetime.strptime(aim_date, "%Y-%m-%d")
+  delta = today - datetime.strptime(start_date, "%Y-%m-%d")
   return delta.days
 
 # 各种倒计时
-def get_counter_left(aim_date):
+def get_counter_left(start_date):
   if aim_date is None:
     return 0
 
   # 为了防止填错日期
-  if re.match(r'^\d{1,2}\-\d{1,2}$', aim_date):
-    next = datetime.strptime(str(date.today().year) + "-" + aim_date, "%Y-%m-%d")
-  elif re.match(r'^\d{2,4}\-\d{1,2}\-\d{1,2}$', aim_date):
-    next = datetime.strptime(aim_date, "%Y-%m-%d")
+  if re.match(r'^\d{1,2}\-\d{1,2}$', birthday):
+    next = datetime.strptime(str(date.today().year) + "-" + birthday, "%Y-%m-%d")
+  elif re.match(r'^\d{2,4}\-\d{1,2}\-\d{1,2}$', birthday):
+    next = datetime.strptime(birthday, "%Y-%m-%d")
     next = next.replace(nowtime.year)
   else:
     print('日期格式不符合要求')
