@@ -55,7 +55,7 @@ def get_week_day():
   return week_day
 
 # 各种正数日
-def get_memorial_days_count():
+def get_count():
   if start_date is None:
     print('没有设置 开始日')
     return 0
@@ -63,7 +63,7 @@ def get_memorial_days_count():
   return delta.days
 
 # 各种倒计时
-def get_counter_left():
+def get_birthday():
   if birthday is None:
     return 0
 
@@ -168,7 +168,7 @@ data = {
   },
   # 正计时
   "having_day": {
-    "value": get_memorial_days_count(),
+    "value": get_count(),
     "color": get_random_color()
    },
   # 每日一言
@@ -177,7 +177,7 @@ data = {
     "color": get_random_color()
   },
   # 倒计时
-  "birthday_left": get_counter_left,
+  "birthday_left": get_birthday,
   "color": get_random_color()
 }
 
@@ -187,7 +187,7 @@ for index, aim_date in enumerate(split_dates(birthday)):
   if index != 0:
     key_name = key_name + "_%d" % index
   data[key_name] = {
-    "value": get_counter_left(),
+    "value": get_birthday(),
     "color": get_random_color()
   }
 
@@ -197,7 +197,7 @@ for index, aim_date in enumerate(split_dates(start_date)):
   if index != 0:
     key_name = key_name + "_%d" % index
   data[key_name] = {
-    "value": get_memorial_days_count(),
+    "value": get_count(),
     "color": get_random_color()
   }
 
