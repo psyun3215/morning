@@ -55,7 +55,7 @@ def get_week_day():
   return week_day
 
 # 各种正数日
-def get_memorial_days_count(start_date):
+def get_memorial_days_count:
   if start_date is None:
     print('没有设置 开始日')
     return 0
@@ -63,8 +63,8 @@ def get_memorial_days_count(start_date):
   return delta.days
 
 # 各种倒计时
-def get_counter_left(start_date):
-  if aim_date is None:
+def get_counter_left:
+  if birthday is None:
     return 0
 
   # 为了防止填错日期
