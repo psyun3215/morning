@@ -187,7 +187,7 @@ for index, aim_date in enumerate(split_dates(birthday)):
   if index != 0:
     key_name = key_name + "_%d" % index
   data[key_name] = {
-    "value": get_counter_left(aim_dates),
+    "value": get_counter_left(),
     "color": get_random_color()
   }
 
@@ -197,7 +197,7 @@ for index, aim_date in enumerate(split_dates(start_date)):
   if index != 0:
     key_name = key_name + "_%d" % index
   data[key_name] = {
-    "value": get_memorial_days_count(aim_dates),
+    "value": get_memorial_days_count(),
     "color": get_random_color()
   }
 
